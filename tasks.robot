@@ -92,6 +92,9 @@ Store the receipt as a PDF file
 Take a screenshot of the robot
     [Arguments]    ${order_number}
     ${screenshot_name}=    Set Variable    ${OUTPUT_DIR}${/}robot-image-${order_number}.png
+    Wait Until Element Is Visible    //img[@alt='Head']
+    Wait Until Element Is Visible    //img[@alt='Body']
+    Wait Until Element Is Visible    //img[@alt='Legs']
     Screenshot    css:div#robot-preview-image    ${screenshot_name}
     RETURN    ${screenshot_name}
 
